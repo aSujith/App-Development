@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/second_task.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +12,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  Scaffold(
+      routes: {
+        '/secondtask':(context) => const secondtask(),
+      },
+      home: Scaffold(
         backgroundColor: Colors.deepPurple[300],
         appBar: AppBar(
+          elevation: 0.0,
           centerTitle: true,
           leading: const Icon(
             Icons.menu,
@@ -68,7 +73,19 @@ class MyApp extends StatelessWidget {
                       width: 250,
                       // color: Colors.red[50],
                       alignment: Alignment.bottomRight,
-                      child: const Text("Originally published on \n                             -1894")),
+                      child: const Text(
+                          "Originally published on \n                             -1894")),
+                  Container(
+                      height: 80,
+                      width: 280,
+                      // color: Colors.red[50],
+                      alignment: Alignment.bottomRight,
+                      child: ElevatedButton(
+                        child: const Text("2nd Task"),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/secondtask');
+                        },
+                      )),
                 ]),
           ),
         ),
