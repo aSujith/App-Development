@@ -4,13 +4,28 @@ class SecondTask extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Colors.deepPurple[300],
         appBar: AppBar(
-          title: const Text('Simple Counter App'),
+          centerTitle: true,
+          backgroundColor: Colors.deepPurple[500],
+          title: const Text(
+            'Simple Counter App',
+            style: TextStyle(color: Colors.white),
+          ),
         ),
         body: Center(
+            child: Container(
+              height:650 ,
+              width: 350,
+              
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                color: Colors.white,
+              ),
           child: CounterWidget(),
-        ),
+        )),
       ),
     );
   }
@@ -41,9 +56,6 @@ class _CounterWidgetState extends State<CounterWidget> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        const Text(
-          'You have pushed the button this many times:',
-        ),
         Text(
           '$_counter',
           style: Theme.of(context).textTheme.headlineMedium,
