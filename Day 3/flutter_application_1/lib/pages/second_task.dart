@@ -17,14 +17,13 @@ class SecondTask extends StatelessWidget {
         ),
         body: Center(
             child: Container(
-              height:650 ,
+              height:650,
               width: 350,
-              
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
                 color: Colors.white,
               ),
-          child: CounterWidget(),
+              child: CounterWidget(), // This line includes the CounterWidget in your UI
         )),
       ),
     );
@@ -67,11 +66,13 @@ class _CounterWidgetState extends State<CounterWidget> {
               onPressed: _incrementCounter,
               tooltip: 'Increment',
               child: const Icon(Icons.add),
+              heroTag: 'increment',
             ),
             FloatingActionButton(
               onPressed: _decrementCounter,
               tooltip: 'Decrement',
               child: const Icon(Icons.remove),
+              heroTag: 'decrement',
             ),
           ],
         ),

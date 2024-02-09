@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/day%205/task1.dart';
 import 'package:flutter_application_1/pages/second_task.dart';
 
 class FirstTask extends StatelessWidget {
@@ -7,20 +8,74 @@ class FirstTask extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[300],
+      backgroundColor: const Color.fromRGBO(149, 117, 205, 1),
       appBar: AppBar(
         elevation: 0.0,
         centerTitle: true,
-        leading: const Icon(
-          Icons.menu,
-          color: Colors.white,
-        ),
         title: const Text(
           "Book details",
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.deepPurple[500],
       ),
+
+
+
+
+
+
+
+
+      
+      drawer: Drawer(
+        backgroundColor: Colors.deepPurple[50],
+          child: ListView(
+    // Important: Remove any padding from the ListView.
+    padding: EdgeInsets.zero,
+    children: [
+      const DrawerHeader(
+        decoration: BoxDecoration(
+          color: Colors.deepPurple,
+        ),
+        child: Center(child: Text('Tasks',style: TextStyle(color: Colors.white, fontSize: 30),
+        )),
+      ),
+      ListTile(
+  title: const Text('Day 5'),
+  onTap: () {
+    // Close the drawer first
+    Navigator.pop(context); // This line will close the drawer.
+    
+    // Then, navigate to the SecondTask screen.
+    // Using Future.delayed to allow the pop animation to complete before navigating.
+    Future.delayed(Duration.zero, () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const Day5task1(),
+        ),
+      );
+    });
+  },
+),
+      ListTile(
+        title: const Text('Day 6'),
+        onTap: () {
+          Navigator.pop(context);
+        },
+      ),
+    ],
+  ),
+      ),
+
+
+
+
+
+
+
+
+
       body: Center(
         child: Container(
           height: 650,
@@ -77,7 +132,7 @@ class FirstTask extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) =>  SecondTask(),
+                            builder: (context) => SecondTask(),
                           ),
                         );
                       },
