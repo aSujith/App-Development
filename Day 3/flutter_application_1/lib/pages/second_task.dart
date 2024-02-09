@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 
 class SecondTask extends StatelessWidget {
+  const SecondTask({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.deepPurple[300],
+    return Scaffold(
+        backgroundColor: const Color.fromRGBO(149, 117, 205, 1),
         appBar: AppBar(
+          elevation: 0.0,
           centerTitle: true,
-          backgroundColor: Colors.deepPurple[500],
           title: const Text(
-            'Simple Counter App',
+            "Simple Counter",
             style: TextStyle(color: Colors.white),
           ),
+          backgroundColor: Colors.deepPurple[500],
         ),
         body: Center(
             child: Container(
@@ -25,8 +26,8 @@ class SecondTask extends StatelessWidget {
               ),
               child: CounterWidget(), // This line includes the CounterWidget in your UI
         )),
-      ),
     );
+  
   }
 }
 
