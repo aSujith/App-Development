@@ -14,8 +14,8 @@ class _SlideTransition1State extends State<SlideTransition1>
     vsync: this,
   )..repeat(reverse: true);
   late final Animation<Offset> _offsetAnimation = Tween<Offset>(
-    begin: Offset(0, 0.5),
-    end: Offset(0, -0.5),
+    begin: Offset(0, 0.1),
+    end: Offset(0, -0.1),
   ).animate(CurvedAnimation(parent: _controller, curve: Curves.linear));
 
   @override
