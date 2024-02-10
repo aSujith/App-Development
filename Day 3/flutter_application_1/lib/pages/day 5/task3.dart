@@ -38,18 +38,18 @@ class Day5task3 extends StatelessWidget {
             ),
             InkWell(
                 onTap: () {
-                  Navigator.pop(context); // This line will close the drawer.
-
-                  // Then, navigate to the SecondTask screen.
-                  // Using Future.delayed to allow the pop animation to complete before navigating.
-                  Future.delayed(Duration.zero, () {
-                    Navigator.push(
+                  // Navigator.pop(context); // This line will close the drawer.
+                  Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => const Day5task4(),
                       ),
                     );
-                  });
+                  // Then, navigate to the SecondTask screen.
+                  // Using Future.delayed to allow the pop animation to complete before navigating.
+                  // Future.delayed(Duration.zero, () {
+                    
+                  // });
                 },
                 child: Container(
                   height: 50,

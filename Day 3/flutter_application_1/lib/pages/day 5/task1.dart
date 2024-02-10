@@ -20,20 +20,15 @@ class Day5task1 extends StatelessWidget {
         body: Center(
           child: InkWell(
             onTap: () {
-              // Close the drawer.
-              Navigator.pop(context);
-
               // Wait for a very short duration before navigating to give the drawer time to start closing.
               // This is a compromise to avoid buffering while still preventing potential navigation issues.
-              Future.delayed(const Duration(milliseconds: 10), () {
-                Navigator.pushReplacement(
-                  // Using pushReplacement to avoid stacking pages.
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const Day5task2(),
-                  ),
-                );
-              });
+              Navigator.pushReplacement(
+                // Using pushReplacement to avoid stacking pages.
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Day5task2(),
+                ),
+              );
             },
             child: Container(
               height: 50,
