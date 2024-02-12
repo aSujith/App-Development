@@ -43,16 +43,14 @@ class _MyWidget1State extends State<MyWidget1> {
                 child: Stack(
                   children: [
                     AnimatedAlign(
-                      alignment:
-                          selected ? Alignment.topLeft : Alignment.bottomRight,
-                      duration: const Duration(seconds: 1),
-                      curve: Curves.elasticOut,
-                      child: const Icon(
-                        Icons.favorite,
-                        size: 100,
-                        color: Colors.red,
-                      ),
-                    ),
+                        alignment: selected
+                            ? Alignment.topLeft
+                            : Alignment.bottomRight,
+                        duration: const Duration(seconds: 1),
+                        curve: Curves.elasticOut,
+                        child: const Image(
+                          image:  AssetImage('images/pngwing.com.png'),
+                        )),
                     const Center(
                         child: Text(
                       "Tap the Screen",

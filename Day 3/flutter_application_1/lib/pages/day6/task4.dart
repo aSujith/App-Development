@@ -14,8 +14,8 @@ class _SlideTransition1State extends State<SlideTransition1>
     vsync: this,
   )..repeat(reverse: true);
   late final Animation<Offset> _offsetAnimation = Tween<Offset>(
-    begin: Offset(0, 0.1),
-    end: Offset(0, -0.1),
+    begin: const Offset(0, 0.1),
+    end: const Offset(0, -0.1),
   ).animate(CurvedAnimation(parent: _controller, curve: Curves.linear));
 
   @override
@@ -37,23 +37,30 @@ class _SlideTransition1State extends State<SlideTransition1>
         ),
         backgroundColor: Colors.deepPurple[500],
       ),
-      body: Center(
-          child: Container(
-        height: 600,
-        width: 350,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(25), color: Colors.white),
-        child: SlideTransition(
-            position: _offsetAnimation,
-            child: Padding(
-              padding: const EdgeInsets.all(8),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Center(
               child: Container(
-                  height: 30,
-                  width: 30,
-                  child: const Icon(Icons.favorite,size: 150,
-                  color: Colors.red,)),
-            )),
-      )),
+            height: 600,
+            width: 350,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25), color: Colors.white),
+            child: SlideTransition(
+                position: _offsetAnimation,
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  // ignore: sized_box_for_whitespace
+                  child: Container(
+                      height: 30,
+                      width: 30,
+                      child: const Icon(Icons.favorite,size: 150,
+                      color: Colors.red,)),
+                )),
+          )),
+          
+        ],
+      ),
     );
   }
 }

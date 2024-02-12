@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/day%205/task1.dart';
+import 'package:flutter_application_1/pages/day%207/task1.dart';
 import 'package:flutter_application_1/pages/day6/task1.dart';
 import 'package:flutter_application_1/pages/second_task.dart';
 
@@ -62,6 +63,20 @@ class FirstTask extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => const MyWidget1(),
+                    ),
+                  );
+                });
+              },
+            ),
+            ListTile(
+              title: const Text('Day 7'),
+              onTap: () {
+                Navigator.pop(context);
+                Future.delayed(Duration.zero, () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Day7Task1(),
                     ),
                   );
                 });
