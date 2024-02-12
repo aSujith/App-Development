@@ -14,8 +14,8 @@ class _SlideTransition1State extends State<SlideTransition1>
     vsync: this,
   )..repeat(reverse: true);
   late final Animation<Offset> _offsetAnimation = Tween<Offset>(
-    begin: const Offset(0, 0.1),
-    end: const Offset(0, -0.1),
+    begin: const Offset(0, 0.2),
+    end: const Offset(0, -0.2),
   ).animate(CurvedAnimation(parent: _controller, curve: Curves.linear));
 
   @override
@@ -54,7 +54,7 @@ class _SlideTransition1State extends State<SlideTransition1>
                   child: Container(
                       height: 30,
                       width: 30,
-                      child: const Icon(Icons.favorite,size: 150,
+                      child: const Icon(Icons.favorite,size: 200,
                       color: Colors.red,)),
                 )),
           )),

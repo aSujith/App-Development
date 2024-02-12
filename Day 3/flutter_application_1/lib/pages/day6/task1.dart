@@ -44,12 +44,13 @@ class _MyWidget1State extends State<MyWidget1> {
                   children: [
                     AnimatedAlign(
                         alignment: selected
-                            ? Alignment.topLeft
-                            : Alignment.bottomRight,
-                        duration: const Duration(seconds: 1),
-                        curve: Curves.elasticOut,
+                            ? Alignment.topRight
+                            : Alignment.bottomLeft,
+                        duration: const Duration(seconds: 2),
+                        curve: Curves.elasticIn,
                         child: const Image(
-                          image:  AssetImage('images/pngwing.com.png'),
+                          width: 200,
+                          image:  AssetImage('images/pngwing.com.png',),
                         )),
                     const Center(
                         child: Text(
