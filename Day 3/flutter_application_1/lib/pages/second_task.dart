@@ -6,33 +6,36 @@ class SecondTask extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color.fromRGBO(149, 117, 205, 1),
-        appBar: AppBar(
-          elevation: 0.0,
-          centerTitle: true,
-          title: const Text(
-            "Simple Counter",
-            style: TextStyle(color: Colors.white),
-          ),
-          backgroundColor: Colors.deepPurple[500],
+      backgroundColor: const Color.fromRGBO(149, 117, 205, 1),
+      appBar: AppBar(
+        elevation: 0.0,
+        centerTitle: true,
+        title: const Text(
+          "Simple Counter",
+          style: TextStyle(color: Colors.white),
         ),
-        body: Center(
-            child: Container(
-              height:650,
-              width: 350,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-                color: Colors.white,
-              ),
-              child: CounterWidget(), // This line includes the CounterWidget in your UI
-        )),
+        backgroundColor: Colors.deepPurple[500],
+      ),
+      body: Center(
+          child: Container(
+        height: 650,
+        width: 350,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(25),
+          color: Colors.white,
+        ),
+        child:
+            const CounterWidget(), // This line includes the CounterWidget in your UI
+      )),
     );
-  
   }
 }
 
 class CounterWidget extends StatefulWidget {
+  const CounterWidget({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _CounterWidgetState createState() => _CounterWidgetState();
 }
 
@@ -66,14 +69,14 @@ class _CounterWidgetState extends State<CounterWidget> {
             FloatingActionButton(
               onPressed: _incrementCounter,
               tooltip: 'Increment',
-              child: const Icon(Icons.add),
               heroTag: 'increment',
+              child: const Icon(Icons.add),
             ),
             FloatingActionButton(
               onPressed: _decrementCounter,
               tooltip: 'Decrement',
-              child: const Icon(Icons.remove),
               heroTag: 'decrement',
+              child: const Icon(Icons.remove),
             ),
           ],
         ),
