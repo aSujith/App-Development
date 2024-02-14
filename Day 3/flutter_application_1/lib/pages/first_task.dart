@@ -158,7 +158,7 @@ class FirstTask extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SecondTask(),
+                            builder: (context) => const SecondTask(),
                           ),
                         );
                       },

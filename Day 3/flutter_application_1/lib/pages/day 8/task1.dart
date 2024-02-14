@@ -1,5 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/day%208/task2.dart';
+import 'package:flutter_application_1/widget.dart';
 
 class Day8Task1 extends StatefulWidget {
   const Day8Task1({super.key});
@@ -11,70 +14,95 @@ class Day8Task1 extends StatefulWidget {
 class _Day8Task1State extends State<Day8Task1> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.lime,
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text("Day 8 - Task 1"),
-      ),
-      body: Center(
-        child: Column(
+    return defaultWidget(
+      title: 'Day 8',
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const Day8Task2(),
+            ));
+      },
+      body: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
-              height: 600,
-              width: 350,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-                color: Colors.white,
-              ),
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Container(
-                          height: 270,
-                          width: 150,
-                          color: Colors.pinkAccent,
-                        ),
-                        Container(
-                          height: 270,
-                          width: 150,
-                          color: Colors.pinkAccent,
-                        )
-                      ],
-                    )
-                  ]),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const Day8Task2(),
-                  ),
-                );
-              },
-              child: Container(
-                width: 350,
-                height: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                  color: Colors.white,
+            SizedBox(
+              height: 225,
+              width: 150,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: const Image(
+                  image: AssetImage('images/mountain.jpg'),
+                  fit: BoxFit.cover,
                 ),
-                child: const Center(
-                  child: Text(
-                    "Next Task ->",
-                    style: TextStyle(fontSize: 20),
-                  ),
+              ),
+            ),
+            SizedBox(
+              height: 225,
+              width: 150,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Stack(
+                  children: <Widget>[
+                    const Image(
+                      image: AssetImage('images/mountain.jpg'),
+                      fit: BoxFit.fill,
+                    ),
+                    BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
+                      child: Container(color: Colors.transparent),
+                    ),
+                  ],
                 ),
               ),
             )
           ],
         ),
-      ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              height: 225,
+              width: 150,
+              color: Colors.black,
+              child: ClipPath(
+                clipper: MyClipper(),
+                child: Container(
+                  width: double.infinity,
+                  height:125 ,
+                  color: Colors.blueGrey[600],
+                ),
+              ),
+            ),
+            Container(
+              height: 225,
+              width: 150,
+              color: Colors.purple[300],
+            )
+          ],
+        )
+      ]),
     );
   }
+}
+class MyClipper extends CustomClipper<Path>{
+@override
+Path getClip(Size size){return Path()
+..lineTo(0, size.height)
+..quadraticBezierTo(size.width / 3, size.height-20, size.width / 2, size.height-10)
+..lineTo(size.width, 0);
+
+
+
+
+}
+@override
+bool shouldReclip(covariant CustomClipper<Path> oldClipper){
+
+  return false;
+}
+
+
+
 }

@@ -12,7 +12,7 @@ class Day7Task2 extends StatefulWidget {
 class _Day7Task2State extends State<Day7Task2> {
   @override
   Widget build(BuildContext context) {
-    TableRow _tableRow = const TableRow(children: <Widget>[
+    TableRow tableRow = const TableRow(children: <Widget>[
       Padding(
         padding: EdgeInsets.all(10),
         child: Text("Content 1"),
@@ -73,8 +73,8 @@ class _Day7Task2State extends State<Day7Task2> {
                       color: Colors.pink[300],
                       child: Table(
                         border: TableBorder.all(),
-                        defaultColumnWidth: FixedColumnWidth(1),
-                        children: <TableRow>[_tableRow, _tableRow, _tableRow],
+                        defaultColumnWidth: const FixedColumnWidth(1),
+                        children: <TableRow>[tableRow, tableRow, tableRow],
                       ),
                     ),
                     Container(
@@ -82,7 +82,7 @@ class _Day7Task2State extends State<Day7Task2> {
                       width: 300,
                       color: Colors.pink[400],
                       child: Padding(
-                        padding: EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(8),
                         child: Center(
                             child: Wrap(
                           spacing: 1,
