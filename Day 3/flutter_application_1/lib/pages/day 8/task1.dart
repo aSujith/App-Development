@@ -79,6 +79,24 @@ class _Day8Task1State extends State<Day8Task1> {
               height: 225,
               width: 150,
               color: Colors.purple[300],
+              child: Center(
+                child: ClipOval(
+                  child: Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors.black
+                  ),
+                
+                
+                ),
+              ),
+
+
+
+
+
+
+
             )
           ],
         )
