@@ -64,8 +64,8 @@ class _MyWidget1State extends State<MyWidget1> {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.pushReplacement(
-                // Using pushReplacement to avoid stacking pages.
+              Navigator.push(
+                
                 context,
                 MaterialPageRoute(
                   builder: (context) => const AnimatedList1(),

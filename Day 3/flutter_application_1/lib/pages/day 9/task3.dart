@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/day%209/task4.dart';
 import 'package:flutter_application_1/widget.dart';
 
 class Day9Task3 extends StatefulWidget {
@@ -14,9 +13,7 @@ class _Day9Task3State extends State<Day9Task3> {
   Widget build(BuildContext context) {
     return defaultWidget(
       title: 'Task 3',
-      onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => const Day9Task4(),));
-      },
+      
       body: Center(
         child: RefreshIndicator(
           color: Colors.white,
@@ -28,7 +25,7 @@ class _Day9Task3State extends State<Day9Task3> {
             return notification.depth == 1;
           },
           child: CustomScrollView(
-            slivers: <Widget>[
+            slivers: <Widget>[ 
               SliverToBoxAdapter(
                 child: Container(
                   height: 100,

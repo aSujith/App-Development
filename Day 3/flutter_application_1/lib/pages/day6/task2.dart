@@ -115,7 +115,7 @@ class _AnimatedList1State extends State<AnimatedList1> {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => const FadeTransition1(),
