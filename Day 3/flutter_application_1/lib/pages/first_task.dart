@@ -137,8 +137,10 @@ class FirstTask extends StatelessWidget {
           decoration: BoxDecoration(
               color: const Color.fromARGB(255, 228, 228, 228),
               borderRadius: BorderRadius.circular(25)),
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          child: ListView(
+            padding: const EdgeInsets.all( 30),
+
+              // mainAxisAli?gnment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
                   height: 250,

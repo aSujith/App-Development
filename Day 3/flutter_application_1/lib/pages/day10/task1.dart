@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widget.dart'; // Ensure this is the correct path.
 
 class Day10Task1 extends StatefulWidget {
   const Day10Task1({super.key});
