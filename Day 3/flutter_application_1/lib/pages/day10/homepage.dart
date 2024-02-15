@@ -39,10 +39,59 @@ class _HomePageState extends State<HomePage> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             color: Colors.cyan[200],
-                            
-                            
                           ),
-                          
+                          child: Center(
+                            child: Column(
+                              children: [
+                                Expanded(
+                                    flex: 2,
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          height: 150,
+                                          width: 150,
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(15.0),
+                                            child: SizedBox(
+                                              width: 100,
+                                              height: 100,
+                                              
+                                              child: Image.network(
+                                                'https://images.immediate.co.uk/production/volatile/sites/3/2023/12/Fortnite-Festival-songs-079f0e5.jpg?quality=90&resize=980,654',
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        const Column(
+                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            Text("Song1 ...\nsjylsdfsodnvofhgifgui",style: TextStyle(fontSize: 16),),
+                                            Row(
+                                            
+                                              children: [
+                                                Icon(Icons.skip_previous_rounded),
+                                                Padding(
+                                                  padding: EdgeInsets.only(left: 10,right: 10),
+                                                  child: Icon(Icons.play_circle_fill),
+                                                ),
+                                                Icon(Icons.skip_next_rounded)
+                                              ],
+
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    )),
+                                Expanded(
+                                    child: Container(
+                                  height: 150,
+                                  color: Colors.blue,
+                                ))
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -96,10 +145,12 @@ class _HomePageState extends State<HomePage> {
                                         children: [
                                           Icon(
                                             Icons.headphones_outlined,
-                                            
                                             size: 30,
                                           ),
-                                          Icon(Icons.bolt_outlined,size: 15,),
+                                          Icon(
+                                            Icons.bolt_outlined,
+                                            size: 15,
+                                          ),
                                           Text(
                                             "90%",
                                             style: TextStyle(
