@@ -25,48 +25,66 @@ class _Day10Task1State extends State<Day10Task1> {
 
   @override
   Widget build(BuildContext context) {
+    final currentHeight = MediaQuery.of(context).size.height;
+
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.light,
-        scaffoldBackgroundColor: Colors.cyan[50],
-        primaryColor: Colors.green[300],
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        scaffoldBackgroundColor: Colors.grey[900],
-        primaryColor: Colors.teal[700],
-      ),
-      themeMode: _themeMode, // Use the theme mode state variable
-      home: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: _themeMode == ThemeMode.dark
-              ? Colors.teal[700]
-              : Colors.teal[300],
-          title: const Text("Task 1"),
-          // Add a button in the AppBar to toggle the theme
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 15),
-              child: IconButton(
-                icon: const Icon(Icons.brightness_6),
-                onPressed: _toggleTheme, // Call the toggle function
-              ),
-            )
-          ],
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          brightness: Brightness.light,
+          scaffoldBackgroundColor: Colors.cyan[50],
+          primaryColor: Colors.green[300],
         ),
-        body: Center(
-          child: Container(
-            width: 350,
-            height: 600,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-                color: Colors.grey[800]),
-            
+        darkTheme: ThemeData(
+          brightness: Brightness.dark,
+          scaffoldBackgroundColor: Colors.grey[900],
+          primaryColor: Colors.teal[700],
+        ),
+        themeMode: _themeMode, // Use the theme mode state variable
+        home: Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            backgroundColor: _themeMode == ThemeMode.dark
+                ? Colors.teal[700]
+                : Colors.teal[300],
+            title: const Text("Task 1"),
+            // Add a button in the AppBar to toggle the theme
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(right: 15),
+                child: IconButton(
+                  icon: const Icon(Icons.brightness_6),
+                  onPressed: _toggleTheme, // Call the toggle function
+                ),
+              )
+            ],
           ),
-        ),
-      ),
-    );
+          body: Center(
+            child: Container(
+              width: 350,
+              height: 600,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  color: currentHeight > 400
+                      ? Colors.grey[800]
+                      : Colors.grey[400]),
+              child: Center(
+                child: SizedBox(
+                  width: 300, // Specify the width for the Card
+                  height: 100, // Specify the height for the Card
+                  child: Card(
+                    color: _themeMode == ThemeMode.dark
+                        ? Colors.teal[700]
+                        : Colors.teal[300],
+                    margin: const EdgeInsets.all(20),
+                    child: Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Center(child: Text(currentHeight.toString())),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ));
   }
 }
